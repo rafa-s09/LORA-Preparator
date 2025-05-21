@@ -1,2 +1,3 @@
 # LORA-Preparator
-Image preparer for LORA training.
+
+LORA Preparator is a system developed on the Uno Platform, designed to optimize image preparation for creating LORAs. It offers efficient tools for adjusting, standardizing, and refining images, ensuring that they are ready to be used in AI models. Its intuitive interface and advanced features make the process more agile and accessible for developers and enthusiasts in the field.
