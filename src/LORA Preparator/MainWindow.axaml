@@ -1,0 +1,106 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="using:LORA_Preparator"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="LORA_Preparator.MainWindow"
+        Title="LORA_Preparator" Width="1000" Height="600" CanResize="False">
+
+  <Window.Resources>
+    <local:ImagePathConverter x:Key="ImagePathConverter"/>
+  </Window.Resources>
+
+  <StackPanel Margin="20" Spacing="10">
+    <Grid x:Name="gdControls">
+      <Grid.RowDefinitions >
+        <RowDefinition Height="100"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+
+      <StackPanel x:Name="partFolder" Orientation="Vertical" Grid.Row="0">
+        <!-- Input Folder -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Spacing="5" Margin="0,0,0,10">
+          <TextBox x:Name="txtInput" Width="880" Watermark="Select the images folder..." IsReadOnly="True"/>
+          <Button x:Name="btnInput" Content="Search" Click="btnInput_OnSelectFolderClicked" />
+        </StackPanel>
+
+        <!-- Output Folder -->
+        <StackPanel Orientation="Horizontal" Spacing="5">
+          <TextBox x:Name="txtOutput" Width="880" Watermark="Select output folder" IsReadOnly="True"/>
+          <Button x:Name="btnOutput" Content="Search" Click="btnOutput_OnSelectFolderClicked" />
+        </StackPanel>
+        
+      </StackPanel>
+
+      <Grid Grid.Row="1" x:Name="partOptions" Margin="0,0,0,20">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Vertical" Grid.Column="0" Width="500" >
+          <!-- Background -->
+          <ComboBox x:Name="cmbBackgroundColor" PlaceholderText="Choose the Background" Width="450" Margin="0,0,0,10" PointerPressed="OnComboBoxRightClick">
+            <ComboBoxItem Content="Transparent"/>
+            <ComboBoxItem Content="Neutral (Gray 50%)"/>
+          </ComboBox>
+
+          <!-- Resolution -->
+          <ComboBox x:Name="cmbResolution" PlaceholderText="Choose Resolution" Width="450" Margin="0,0,0,10" PointerPressed="OnComboBoxRightClick">
+            <ComboBoxItem Content="x512"/>
+            <ComboBoxItem Content="x1024"/>
+            <ComboBoxItem Content="Both"/>
+          </ComboBox>
+
+
+        </StackPanel>
+
+        <Grid Grid.Column="1" Width="500">
+          <StackPanel Orientation="Vertical" >        
+
+            <!-- Frames Extract -->
+            <CheckBox x:Name="cbxExtractAnimations" Content="Extract all frames from animations"/>
+          </StackPanel>
+          
+          <!-- Process Button -->
+          <Button x:Name="btnProcess" Content="Process" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,15,30,0" Click="btnProcess_WorkLoader" />
+        </Grid>
+
+
+      </Grid>
+
+      <StackPanel Orientation="Vertical" Grid.Row="2">
+        <!-- DataGrid -->
+        <Border BorderBrush="White" BorderThickness="1" Padding="2" CornerRadius="5" Width="960" Height="310" Margin="0,0,0,2" >
+          <DataGrid x:Name="dtgCollection" x:DataType="local:ImageModels" HorizontalAlignment="Stretch" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+              <DataGridTemplateColumn Header="ID" >
+                <DataTemplate x:DataType="local:ImageModels">
+                  <TextBlock Text="{Binding Id}">
+                    <ToolTip.Tip>
+                      <Border Background="Black" BorderBrush="Gray" BorderThickness="1" CornerRadius="5" Padding="5">
+                        <Image Source="{Binding Path, Converter={StaticResource ImagePathConverter}}" Width="200" Height="200" Stretch="Uniform"/>
+                      </Border>
+                    </ToolTip.Tip>
+                  </TextBlock>
+                </DataTemplate>
+              </DataGridTemplateColumn>
+              <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+              <DataGridTextColumn Header="Format" Binding="{Binding Format}"/>
+              <DataGridCheckBoxColumn Header="Processed" Binding="{Binding Processed}"/>
+              <DataGridTextColumn Header="Path" Binding="{Binding Path}"/>
+            </DataGrid.Columns>
+          </DataGrid>
+        </Border>
+        <ProgressBar x:Name="prgWorkProgress" Height="10" Minimum="0" Maximum="1" Value="0" />
+
+      </StackPanel>
+
+
+      
+    </Grid>    
+  </StackPanel>  
+  
+</Window>

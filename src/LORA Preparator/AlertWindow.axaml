@@ -1,0 +1,20 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="LORA_Preparator.AlertWindow"
+        Title="Aviso"
+        Width="300" Height="150"
+        CanResize="False"
+        WindowStartupLocation="CenterOwner"        
+        SystemDecorations="None"
+        TransparencyLevelHint="AcrylicBlur, Blur, Transparent"
+        CornerRadius="16">
+  <Border BorderBrush="{DynamicResource WinBackgroundBrush}" BorderThickness="2" CornerRadius="16">
+    <StackPanel Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="10">
+      <TextBlock x:Name="MessageText" TextWrapping="Wrap" TextAlignment="Center" FontSize="14" />
+      <Button Content="OK" Foreground="Gray" HorizontalAlignment="Center" Click="OkButton_Click" Margin="15" />
+    </StackPanel>
+  </Border>
+</Window>

@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35913.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LORA Preparator", "LORA Preparator.csproj", "{1E43F4E1-17DC-4524-8ECA-9A305D697EAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibAPNG", "..\LibAPNG\LibAPNG.csproj", "{AC7D860D-1597-4A2D-B5EB-6863443DC480}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E43F4E1-17DC-4524-8ECA-9A305D697EAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E43F4E1-17DC-4524-8ECA-9A305D697EAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E43F4E1-17DC-4524-8ECA-9A305D697EAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E43F4E1-17DC-4524-8ECA-9A305D697EAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC7D860D-1597-4A2D-B5EB-6863443DC480}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC7D860D-1597-4A2D-B5EB-6863443DC480}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC7D860D-1597-4A2D-B5EB-6863443DC480}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC7D860D-1597-4A2D-B5EB-6863443DC480}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C3AECF8-1E4A-4B45-A0A3-51C60811455D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C3AECF8-1E4A-4B45-A0A3-51C60811455D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {14556F04-3D01-4B3B-A163-022664F53090}
+	EndGlobalSection
+EndGlobal
