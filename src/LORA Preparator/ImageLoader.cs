@@ -14,7 +14,7 @@ public class ImageLoader
             return new();
 
         string[] validExtensions = [".jpg", ".png", ".bmp", ".gif", ".webp"];
-        List<string>? files = [.. Directory.GetFiles(folderPath).Where(f => validExtensions.Contains(Path.GetExtension(f).ToLower()))];
+        List<string> files = [.. Directory.GetFiles(folderPath).Where(f => validExtensions.Contains(Path.GetExtension(f).ToLower())).OrderBy(f => Path.GetFileName(f))];
 
         ObservableCollection<ImageModels> imageList = [];
         int idPadding = files.Count.ToString().Length;
